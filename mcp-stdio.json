@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "market-news": {
+      "command": "python3",
+      "args": ["mcp_stdio_bridge.py"]
+    }
+  }
+}

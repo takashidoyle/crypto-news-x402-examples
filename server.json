@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "site.goat-lighthouse/market-news",
+  "title": "Market News API",
+  "description": "AI-scored crypto, equities, forex, commodities & macro news, $0.10 cross-market batch, and Binance announcements via x402 USDC on Base/Solana (15 MCP tools; free catalogue & quotes).",
+  "version": "1.0.2",
+  "websiteUrl": "https://goat-lighthouse.site",
+  "repository": {
+    "source": "github",
+    "url": "https://github.com/takashidoyle/crypto-news-x402-examples"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://goat-lighthouse.site/mcp"
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "freeTools": "market_catalogue, news_sample, list_supported_coins, check_pass, and unpaid x402 quotes are free.",
+      "payment": "Pay per call inside MCP via x402 USDC on Base or Solana: single feeds $0.005-$0.05, cross-market signal batch (get_market_signal_batch) $0.10, annual Binance announcements $0.25, unlimited fair-use passes $3/week or $9/month.",
+      "protocolVersionsOverPost": [
+        "2024-11-05",
+        "2025-03-26",
+        "2025-06-18",
+        "2025-11-25",
+        "2026-07-28"
+      ],
+      "transportNote": "POST Streamable HTTP transport; a zero-dependency Python stdio bridge (mcp_stdio_bridge.py) is included in the repository for stdio-only clients."
+    }
+  }
+}
