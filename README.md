@@ -1,4 +1,7 @@
+
 # crypto-news-x402-examples
+
+[![Market News API MCP connector](https://glama.ai/mcp/connectors/site.goat-lighthouse/market-news/badges/score.svg)](https://glama.ai/mcp/connectors/site.goat-lighthouse/market-news)
 
 Examples and a zero-dependency local MCP `stdio` bridge for the [Market News API](https://goat-lighthouse.site/), by Takashi Doyle. Crypto, equities, forex, commodities, macro headlines, and Binance exchange announcements include publisher, timestamps, market/ticker/event tags, and an AI impact score with a one-sentence reason where scored. Scores are model estimates, not trading advice. Some records may lack scores or labels.
 
