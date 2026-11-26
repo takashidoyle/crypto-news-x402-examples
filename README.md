@@ -9,6 +9,14 @@ Start free: [catalogue](https://goat-lighthouse.site/), [delayed sample](https:/
 
 Prices checked 24 November 2026: crypto news, latest market news, latest announcements, and market snapshot `$0.005` per call; listing events `$0.01`; crypto news day and market news day `$0.05` each (available UTC archive dates are enumerated live at [`/health`](https://goat-lighthouse.site/health)); multi-market signal batch (`/v1/news/batch`) `$0.10`; annual announcement archive `$0.25`. Passes are `$3` for seven days and `$9` for 30 days. The response quote is authoritative; prices can change. Pay-per-call supports USDC on Base or Solana; the scripts below use Base.
 
+## Free 30-Day Parquet Research Sample & Support
+
+- **Free 30-Day Sample (Parquet + JSONL.gz + Event-Study Notebook):** [takashi-doyle/crypto-market-news-ai-scored](https://huggingface.co/datasets/takashi-doyle/crypto-market-news-ai-scored) — `18,239` headlines across `742` publishers (`2026-10-27` to `2026-11-25`) + `75` recent Binance listings + `demo_event_study.ipynb` + `SHA256SUMS`.
+- **Live Delayed Feed Space:** [takashi-doyle/market-news-feed](https://huggingface.co/spaces/takashi-doyle/market-news-feed)
+- **Remote 15-Tool MCP Server (`v25.56`):** `https://goat-lighthouse.site/mcp` — accepts free preview tools (no key), `Authorization: Bearer <pass_key>`, or x402 USDC.
+- **Pass Scope (`v25.56`):** `$3` 7-day pass covers all live endpoints + trailing 14 UTC archive days; `$9` 30-day pass covers all `1,425` archive days (`2023-01-01` to `2026-11-25`) + `11,224` Binance announcements (`2017–2026`).
+- **Support:** `support@goat-lighthouse.site`
+
 Measured 18 November 2026: one scored headline record is about 150 to 290 tokens, while reading the article behind one headline took 1,200 to 1,700 tokens as extracted text, or 42,000 to 55,000 as raw HTML, before any scoring. These are character-count estimates; actual sizes vary.
 
 ## Inspect without paying
