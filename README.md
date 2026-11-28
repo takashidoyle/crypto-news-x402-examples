@@ -9,6 +9,13 @@ Start free: [catalogue](https://goat-lighthouse.site/), [delayed sample](https:/
 
 Prices checked 24 November 2026: crypto news, latest market news, latest announcements, and market snapshot `$0.005` per call; listing events `$0.01`; crypto news day and market news day `$0.05` each (available UTC archive dates are enumerated live at [`/health`](https://goat-lighthouse.site/health)); multi-market signal batch (`/v1/news/batch`) `$0.10`; annual announcement archive `$0.25`. Passes are `$3` for seven days and `$9` for 30 days. The response quote is authoritative; prices can change. Pay-per-call supports USDC on Base or Solana; the scripts below use Base.
 
+## What's new in v25.58
+
+- **Push Server-Sent Events (`GET /v1/stream`):** `?tier=free` delayed (`>=30m`) SSE with `retry: 5000` and `Last-Event-ID` zero-dup resume, plus live paid SSE (`$0.005` USDC on Base or Solana via x402 or Bearer pass token).
+- **Exchange Listing & Catalyst Feed (`GET /v1/catalysts/listings`):** free delayed preview (`?mode=sample`) and live `$0.005` feed with deterministic `catalyst_type` (`LISTING`, `DELISTING`, `PERP_LAUNCH`, `MAINTENANCE`, `REGULATORY`, `MACRO`), `entities[]`, `risk_flag`, and `row_hash`.
+- **Cryptographically Provable Point-in-Time Merkle Archive (`GET /v1/merkle/latest`, `/v1/merkle/YYYY-MM-DD`, `/v1/verify`):** zero-auth SHA-256 Merkle roots (`sha256-merkle-v1`) + Base (`eip155:8453`) anchor calldata + pure-Python zero-dependency offline verifier ([`verify_pit_merkle.py`](verify_pit_merkle.py): `python3 verify_pit_merkle.py verify-proof ...`).
+- **Live Ingest Latency SLA (`GET /health`):** publishes live `snapshot_age_sec` and `capture_lag_p50_sec` / `capture_lag_p95_sec` telemetry.
+
 ## Free 30-Day Parquet Research Sample & Support
 
 - **Free 30-Day Sample (Parquet + JSONL.gz + Event-Study Notebook):** [takashi-doyle/crypto-market-news-ai-scored](https://huggingface.co/datasets/takashi-doyle/crypto-market-news-ai-scored) — `18,239` headlines across `742` publishers (`2026-10-27` to `2026-11-25`) + `75` recent Binance listings + `demo_event_study.ipynb` + `SHA256SUMS`.
