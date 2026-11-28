@@ -1,4 +1,8 @@
 
+<p align="left">
+  <a href="https://goat-lighthouse.site/"><img src="https://goat-lighthouse.site/logo.png" alt="Goat Lighthouse" width="56" height="56" /></a>
+</p>
+
 # crypto-news-x402-examples
 
 [![Market News API MCP connector](https://glama.ai/mcp/connectors/site.goat-lighthouse/market-news/badges/score.svg)](https://glama.ai/mcp/connectors/site.goat-lighthouse/market-news)
@@ -9,12 +13,13 @@ Start free: [catalogue](https://goat-lighthouse.site/), [delayed sample](https:/
 
 Prices checked 24 November 2026: crypto news, latest market news, latest announcements, and market snapshot `$0.005` per call; listing events `$0.01`; crypto news day and market news day `$0.05` each (available UTC archive dates are enumerated live at [`/health`](https://goat-lighthouse.site/health)); multi-market signal batch (`/v1/news/batch`) `$0.10`; annual announcement archive `$0.25`. Passes are `$3` for seven days and `$9` for 30 days. The response quote is authoritative; prices can change. Pay-per-call supports USDC on Base or Solana; the scripts below use Base.
 
-## What's new in v25.58
+## What's new in v25.58–v25.59
 
 - **Push Server-Sent Events (`GET /v1/stream`):** `?tier=free` delayed (`>=30m`) SSE with `retry: 5000` and `Last-Event-ID` zero-dup resume, plus live paid SSE (`$0.005` USDC on Base or Solana via x402 or Bearer pass token).
 - **Exchange Listing & Catalyst Feed (`GET /v1/catalysts/listings`):** free delayed preview (`?mode=sample`) and live `$0.005` feed with deterministic `catalyst_type` (`LISTING`, `DELISTING`, `PERP_LAUNCH`, `MAINTENANCE`, `REGULATORY`, `MACRO`), `entities[]`, `risk_flag`, and `row_hash`.
 - **Cryptographically Provable Point-in-Time Merkle Archive (`GET /v1/merkle/latest`, `/v1/merkle/YYYY-MM-DD`, `/v1/verify`):** zero-auth SHA-256 Merkle roots (`sha256-merkle-v1`) + Base (`eip155:8453`) anchor calldata + pure-Python zero-dependency offline verifier ([`verify_pit_merkle.py`](verify_pit_merkle.py): `python3 verify_pit_merkle.py verify-proof ...`).
 - **Live Ingest Latency SLA (`GET /health`):** publishes live `snapshot_age_sec` and `capture_lag_p50_sec` / `capture_lag_p95_sec` telemetry.
+- **RapidAPI Hub (Card / PayPal Billing) & Brand Assets (`v25.59`):** Subscribe by card or PayPal on [RapidAPI Hub](https://rapidapi.com/TakashiDoyle/api/market-news-ai-sentiment-api1) (`BASIC $0/mo (50 req)`, `PRO $14.99/mo (5,000 req)`, `ULTRA $39.99/mo (50,000 req)`) alongside zero-signup x402 USDC on Base CDP & Solana PayAI.
 
 ## Free 30-Day Parquet Research Sample & Support
 
@@ -23,6 +28,8 @@ Prices checked 24 November 2026: crypto news, latest market news, latest announc
 - **Remote 15-Tool MCP Server (`v25.56`):** `https://goat-lighthouse.site/mcp` — accepts free preview tools (no key), `Authorization: Bearer <pass_key>`, or x402 USDC.
 - **Pass Scope (`v25.56`):** `$3` 7-day pass covers all live endpoints + trailing 14 UTC archive days; `$9` 30-day pass covers all `1,425` archive days (`2023-01-01` to `2026-11-25`) + `11,224` Binance announcements (`2017–2026`).
 - **Support:** `support@goat-lighthouse.site`
+- **Free 30-Day Sample on Kaggle (`CC BY 4.0`, Usability `9.41`):** [takashidoylenews/crypto-and-macro-news-ai-scores-30-day-sample](https://www.kaggle.com/datasets/takashidoylenews/crypto-and-macro-news-ai-scores-30-day-sample) — same 30-day Parquet/JSONL sample + Binance announcements + `demo_event_study.ipynb` + `verify_pit_merkle.py`.
+- **RapidAPI Hub (Card / PayPal Plans):** [Market News & AI Sentiment API on RapidAPI](https://rapidapi.com/TakashiDoyle/api/market-news-ai-sentiment-api1) (`BASIC $0/mo`, `PRO $14.99/mo`, `ULTRA $39.99/mo`).
 
 Measured 18 November 2026: one scored headline record is about 150 to 290 tokens, while reading the article behind one headline took 1,200 to 1,700 tokens as extracted text, or 42,000 to 55,000 as raw HTML, before any scoring. These are character-count estimates; actual sizes vary.
 
